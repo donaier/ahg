@@ -2,7 +2,10 @@
 
 namespace Concrete\Package\Ahg;
 
-use Package;
+use Concrete\Core\Package\Package;
+use Concrete\Core\Page\Theme\Theme;
+
+defined('C5_EXECUTE') or die("Access Denied.");
 
 class Controller extends Package
 {
@@ -23,6 +26,7 @@ class Controller extends Package
     public function install()
     {
         $pkg = parent::install();
+        Theme::add('ahg', $pkg);
 
         $this->install_single_pages($pkg);
     }
