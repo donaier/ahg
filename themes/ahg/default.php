@@ -10,10 +10,10 @@ $this->inc('elements/header.php');
     $a->enableGridContainer();
     $a->display($c);
 
-    $a = new Area('Page Footer');
-    $a->enableGridContainer();
-    $a->display($c);
-    ?>
+    // $a = new Area('Page Footer');
+    // $a->enableGridContainer();
+    // $a->display($c);
+    // ?>
 </main>
 
 <?php

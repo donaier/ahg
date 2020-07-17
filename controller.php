@@ -4,6 +4,7 @@ namespace Concrete\Package\Ahg;
 
 use Concrete\Core\Package\Package;
 use Concrete\Core\Page\Theme\Theme;
+use Concrete\Core\Block\BlockType\BlockType;
 
 defined('C5_EXECUTE') or die("Access Denied.");
 
@@ -27,6 +28,23 @@ class Controller extends Package
     {
         $pkg = parent::install();
         Theme::add('ahg', $pkg);
+
+        $bt = BlockType::getByHandle('partners');
+        if (!is_object($bt)) {
+            $bt = BlockType::installBlockType('partners', $pkg);
+        }
+
+        $this->install_single_pages($pkg);
+    }
+
+    public function upgrade()
+    {
+        $pkg = parent::upgrade();
+        // $pkg = Package::getByHandle('custom_theme');
+        $bt = BlockType::getByHandle('partners');
+        if (!is_object($bt)) {
+            $bt = BlockType::installBlockTypeFromPackage('partners', $pkg);
+        }
 
         $this->install_single_pages($pkg);
     }
