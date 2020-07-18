@@ -31,7 +31,7 @@ class Controller extends Package
 
         $bt = BlockType::getByHandle('partners');
         if (!is_object($bt)) {
-            $bt = BlockType::installBlockType('partners', $pkg);
+            $bt = BlockType::installBlockTypeFromPackage('partners', $pkg);
         }
 
         $this->install_single_pages($pkg);
@@ -39,8 +39,8 @@ class Controller extends Package
 
     public function upgrade()
     {
-        $pkg = parent::upgrade();
-        // $pkg = Package::getByHandle('custom_theme');
+        parent::upgrade();
+        $pkg = Package::getByHandle('ahg');
         $bt = BlockType::getByHandle('partners');
         if (!is_object($bt)) {
             $bt = BlockType::installBlockTypeFromPackage('partners', $pkg);

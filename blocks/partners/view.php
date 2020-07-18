@@ -1,7 +1,7 @@
 <?php defined('C5_EXECUTE') or die(_("Access Denied.")) ?>
 
 <?php
-    $page = \Page::getByPath('/vereine', 'ACTIVE');
+    $page = \Page::getByID($top_site, 'ACTIVE');
     $sub_page_ids = $page->getCollectionChildrenArray();
 ?>
 
