@@ -10,54 +10,49 @@ defined('C5_EXECUTE') or die("Access Denied.");
 
 class Controller extends Package
 {
-    protected $pkgHandle = 'ahg'; 
-    protected $appVersionRequired = '5.7.5.6';
-    protected $pkgVersion = '0.0.1';
+  protected $pkgHandle = 'ahg'; 
+  protected $appVersionRequired = '5.7.5.6';
+  protected $pkgVersion = '0.0.2';
 
-    public function getPackageDescription()
-    {
-        return t("allerhand im glarnerland");
+  public function getPackageDescription() {
+    return t("allerhand im glarnerland");
+  }
+
+  public function getPackageName() {
+    return t("ahg");
+  }
+
+  public function install() {
+    $pkg = parent::install();
+    Theme::add('ahg', $pkg);
+
+    $this->install_block_types($pkg);
+    $this->install_single_pages($pkg);
+  }
+
+  public function upgrade() {
+    parent::upgrade();
+    $pkg = Package::getByHandle('ahg');
+
+    $this->install_block_types($pkg);
+    $this->install_single_pages($pkg);
+  }
+
+  public function uninstall() {
+    $pkg = parent::uninstall();
+  }
+
+  function install_single_pages($pkg) {
+    // $directoryDefault = SinglePage::add('/dashboard/sample_package/', $pkg);
+    // $directoryDefault->update(array('cName' => t('Sample Package'), 'cDescription' => t('Sample Package')));
+  }
+
+  function install_block_types($pkg) {
+    foreach (['partners', 'partner_info'] as $btHandle) {
+      $bt = BlockType::getByHandle($btHandle);
+      if (!is_object($bt)) {
+        $bt = BlockType::installBlockTypeFromPackage($btHandle, $pkg);
+      }
     }
-
-    public function getPackageName()
-    {
-        return t("ahg");
-    }
-
-    public function install()
-    {
-        $pkg = parent::install();
-        Theme::add('ahg', $pkg);
-
-        $bt = BlockType::getByHandle('partners');
-        if (!is_object($bt)) {
-            $bt = BlockType::installBlockTypeFromPackage('partners', $pkg);
-        }
-
-        $this->install_single_pages($pkg);
-    }
-
-    public function upgrade()
-    {
-        parent::upgrade();
-        $pkg = Package::getByHandle('ahg');
-        $bt = BlockType::getByHandle('partners');
-        if (!is_object($bt)) {
-            $bt = BlockType::installBlockTypeFromPackage('partners', $pkg);
-        }
-
-        $this->install_single_pages($pkg);
-    }
-
-    public function uninstall()
-    {
-        $pkg = parent::uninstall();
-    }
-
-    function install_single_pages($pkg)
-    {
-        // $directoryDefault = SinglePage::add('/dashboard/sample_package/', $pkg);
-        // $directoryDefault->update(array('cName' => t('Sample Package'), 'cDescription' => t('Sample Package')));
-    }
-
+  }
 }

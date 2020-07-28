@@ -10,29 +10,30 @@ defined('C5_EXECUTE') or die(_("Access Denied."));
 
 class Controller extends BlockController
 {
-    protected $btTable = "btPartners";
-    protected $btInterfaceWidth = "350";
-    protected $btInterfaceHeight = "240";
-    protected $btDefaultSet = 'basic';
+  protected $btTable = "btPartners";
+  protected $btInterfaceWidth = "350";
+  protected $btInterfaceHeight = "240";
+  protected $btDefaultSet = 'basic';
 
-    public function getBlockTypeName()
-    {
-        return t('Partner');
-    }
+  public function getBlockTypeName() {
+    return t('Partner');
+  }
 
-    public function getBlockTypeDescription()
-    {
-        return t('Zeigt alle Partner(-seiten) unterhalb der gewählten Seite an.');
-    }
+  public function getBlockTypeDescription() {
+    return t('Zeigt alle Partner(-seiten) unterhalb der gewählten Seite an.');
+  }
 
-    public function add()
-    {
-        $list = new PageList();
-        $this->set('pages', $list->getResults());
-    }
+  public function add() {
+    $list = new PageList();
+    $this->set('pages', $list->getResults());
+  }
 
-    public function save($data)
-    {
-        parent::save($data);
-    }
+  public function edit() {
+    $list = new PageList();
+    $this->set('pages', $list->getResults());
+  }
+
+  public function save($data) {
+    parent::save($data);
+  }
 }
