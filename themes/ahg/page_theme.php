@@ -126,24 +126,15 @@ class PageTheme extends Theme implements ThemeProviderInterface
     public function getThemeAreaLayoutPresets()
     {
         $presets = [
-            [
-                'handle' => 'left_sidebar',
-                'name' => 'Left Sidebar',
-                'container' => '<div class="row"></div>',
-                'columns' => [
-                    '<div class="col-sm-4"></div>',
-                    '<div class="col-sm-8"></div>',
-                ],
-            ],
-            [
-                'handle' => 'right_sidebar',
-                'name' => 'Right Sidebar',
-                'container' => '<div class="row"></div>',
-                'columns' => [
-                    '<div class="col-sm-8"></div>',
-                    '<div class="col-sm-4"></div>',
-                ],
-            ],
+            // [
+            //     'handle' => 'left_sidebar',
+            //     'name' => 'Left Sidebar',
+            //     'container' => '<div class="row"></div>',
+            //     'columns' => [
+            //         '<div class="col-sm-4"></div>',
+            //         '<div class="col-sm-8"></div>',
+            //     ],
+            // ],
         ];
 
         return $presets;
