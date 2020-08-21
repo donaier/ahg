@@ -3,7 +3,7 @@
 <html lang="<?php echo Localization::activeLanguage() ?>">
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" type="text/css" href="<?php echo $view->getThemePath()?>/css/bootstrap-modified.css">
+    <!-- <link rel="stylesheet" type="text/css" href="<?php echo $view->getThemePath()?>/css/bootstrap-modified.css"> -->
     <?php echo $html->css($view->getStylesheet('main.less')) ?>
     <?php
     View::element('header_required', [
