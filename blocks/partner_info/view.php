@@ -4,12 +4,12 @@
 
 <div class="container partner-info">
   <div class="row">
-    <div class="col-xs-4">
+    <div class="col-xs-4 col-md-2">
       <?php if (is_object($logo_f)) { ?>
         <img src='<?= $logo_f->getUrl() ?>' alt=<?= $title ?>>
       <?php } ?>
     </div>
-    <div class="col-xs-8">
+    <div class="col-xs-8 col-md-6">
       <a href="/">
         <icon class="close"></icon>
       </a>
