@@ -7,5 +7,11 @@
 		</field>
 		<field name="top_site" type="I">
 		</field>
+		<field name="einsatzQ" type="C">
+		</field>
+		<field name="einkaufQ" type="C">
+		</field>
+		<field name="gemeinschaftQ" type="C">
+		</field>
 	</table>
 </schema>
