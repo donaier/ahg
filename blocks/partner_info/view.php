@@ -9,7 +9,7 @@
         <img src='<?= $logo_f->getUrl() ?>' alt=<?= $title ?>>
       <?php } ?>
     </div>
-    <div class="col-xs-8 col-md-6">
+    <div class="col-xs-8 col-md-10">
       <a href="/">
         <icon class="close"></icon>
       </a>
