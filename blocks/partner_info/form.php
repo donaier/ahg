@@ -27,10 +27,19 @@
 </div>
 
 <div class="form-group">
-  <label class="control-label" for="einsatz">"Einsatz"</label>
-  <input type="checkbox" <?php if ($einsatz) { echo 'checked'; }; ?> name="einsatz">
-  <label class="control-label" for="einkauf">"Einkauf"</label>
-  <input type="checkbox" <?php if ($einkauf) { echo 'checked'; }; ?> name="einkauf">
-  <label class="control-label" for="gemeinschaft">"Gemeinschaft"</label>
-  <input type="checkbox" <?php if ($gemeinschaft) { echo 'checked'; }; ?> name="gemeinschaft">
+  <label class="control-label">Kategorien (für die Fragen auf Home)</label>
+  <ul>
+    <li>
+      <input type="checkbox" <?php if ($einsatz) { echo 'checked'; }; ?> name="einsatz">
+      Einsatz
+    </li>
+    <li>
+      <input type="checkbox" <?php if ($einkauf) { echo 'checked'; }; ?> name="einkauf">
+      Einkauf
+    </li>
+    <li>
+      <input type="checkbox" <?php if ($gemeinschaft) { echo 'checked'; }; ?> name="gemeinschaft">
+      Gemeinschaft
+    </li>
+  </ul>
 </div>
