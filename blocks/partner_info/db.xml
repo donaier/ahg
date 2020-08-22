@@ -5,6 +5,14 @@
 			<key />
 			<unsigned />
 		</field>
-		<field name="color" type="C"></field>
+		<field name="logo" type="I">
+			<default value="0" />
+			<unsigned/>
+		</field>
+		<field name="title" type="C"></field>
+		<field name="info" type="X"></field>
+		<field name="einsatz" type="L"></field>
+		<field name="einkauf" type="L"></field>
+		<field name="gemeinschaft" type="L"></field>
 	</table>
 </schema>

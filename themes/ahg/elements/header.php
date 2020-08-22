@@ -6,19 +6,25 @@ $this->inc('elements/header_top.php');
 
 <header>
   <div class="container">
-    <div class="row">
-      <div class="col-sm-4 col-xs-6">
+    <?php if ($c->getCollectionID() == 1) { ?>
+      <div class="row header-content">
+        <div class="col-xs-4">
+          <a href="/">
+            <div class="logo"></div>
+          </a>
+        </div>
+        <div class="col-xs-12">
+          <h1>Allerhand im Glarnerland</h1>
+        </div>
         <?php
         // $a = new GlobalArea('Header Site Title');
         // $a->display();
         ?>
-      </div>
-      <div class="col-sm-8 col-xs-6">
         <?php
         // $a = new GlobalArea('Header Navigation');
         // $a->display();
         ?>
       </div>
-    </div>
+    <?php } ?>
   </div>
 </header>

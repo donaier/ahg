@@ -1,10 +1,54 @@
-// @import "../../../../../concrete/css/build/core/include/mixins.less";
+@import "../../../../../concrete/css/build/core/include/mixins.less";
 
-// @import "build/bootstrap-3.4.1/variables.less";
-// @import "build/bootstrap-3.4.1/mixins.less";
-
+@import "build/bootstrap-3.4.1/variables.less";
+@import "build/bootstrap-3.4.1/mixins.less";
 
 div.ccm-page {
   // @import "build/header.less";
   // @import "build/blocks/faq.less";
+
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+
+  h1 {
+    font-size: 20px;
+    font-weight: 800;
+    padding-bottom: 4px;
+  }
+  p {
+    font-size: 14px;
+    font-weight: 600;
+    padding-bottom: 16px;
+  }
+  img {
+    max-width: 100%;
+  }
+  icon.close {
+    height: 36px;
+    width: 36px;
+    background-image: url(../images/close.png);
+    background-size: contain;
+    opacity: .8;
+  }
+
+  header {
+
+    h1 {
+      font-size: 24px;
+    }
+
+    .header-content {
+      padding: 40px 0;
+    }
+
+    .logo {
+      height: 48px;
+      width: 48px;
+      background: green;
+    }
+  }
+
+  //partners
+  .partner-info {
+    padding-top: 60px;
+  }
 }

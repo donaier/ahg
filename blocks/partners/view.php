@@ -5,18 +5,35 @@
   $sub_page_ids = $page->getCollectionChildrenArray();
 ?>
 
-<div>
-  <?php foreach ($sub_page_ids as $page_id) {
-    $page = \Page::getByID($page_id, 'ACTIVE');
+<div class="container">
+  <div class="row">
+    <?php foreach ($sub_page_ids as $page_id) {
+      $page = \Page::getByID($page_id, 'ACTIVE');
 
-    $link_target  = Loader::helper('navigation')->getLinkToCollection($page);
-    $link_text    = $page->getCollectionName();
-    $color        = sprintf('#%06X', mt_rand(0, 0xFFFFFF));
+      $link_target  = Loader::helper('navigation')->getLinkToCollection($page);
+      $link_text    = $page->getCollectionName();
+      $logo_url = '';
+      $cat_str = '';
 
-    if (($info_block_id = array_search('partner_info', array_column($page->getBlocks(), 'btHandle'))) !== false) {
-      $color = $page->getBlocks()[$info_block_id]->getInstance()->color;
-    }
+      if (($info_block_id = array_search('partner_info', array_column($page->getBlocks(), 'btHandle'))) !== false) {
+        $b = $page->getBlocks()[$info_block_id]->getInstance();
+        if ($b->logo) {
+          $logo_url = \File::getByID($b->logo)->getUrl();
+        }
+        foreach (['einsatz', 'einkauf', 'gemeinschaft'] as $cat) {
+          if ($b->$cat) {
+            $cat_str .= " $cat";
+          }
+        }
+      }
+    ?>
 
-    echo "<a href='$link_target' class='button btn btn-lg' style='background: $color; color: black'>$link_text</a>";
-  } ?>
+    <div class="col-xs-4 col-md-2 partner <?= $cat_str ?>">
+      <a href="<?= $link_target ?>">
+        <img src="<?= $logo_url ?>" alt="">
+      </a>
+    </div>
+
+    <?php } ?>
+  </div>
 </div>
