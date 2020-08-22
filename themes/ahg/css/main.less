@@ -4,69 +4,11 @@
 @import "build/bootstrap-3.4.1/mixins.less";
 
 div.ccm-page {
-  // @import "build/header.less";
-  // @import "build/blocks/faq.less";
+  @grey: #454545;
+  @accent: #3c36bc;
 
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-
-  h1 {
-    font-size: 20px;
-    font-weight: 800;
-    padding-bottom: 4px;
-  }
-  p {
-    font-size: 14px;
-    font-weight: 600;
-    padding-bottom: 16px;
-  }
-  img {
-    max-width: 100%;
-  }
-  icon.close {
-    height: 36px;
-    width: 36px;
-    background-image: url(../images/close.png);
-    background-size: contain;
-    opacity: .8;
-  }
-
-  header {
-
-    h1 {
-      font-size: 24px;
-    }
-
-    .header-content {
-      padding: 40px 0;
-    }
-
-    .logo {
-      height: 48px;
-      width: 48px;
-      background: green;
-    }
-  }
-
-  //partners
-  .partner-info {
-    padding: 60px;
-  }
-  .filter-q {
-    padding-bottom: 36px;
-  }
-  .btn {
-    background: transparent;
-    display: block;
-    padding: 0;
-    padding-bottom: 5px;
-    margin: 10px 0;
-    font-weight: 800;
-    font-size: 18px;
-    border-bottom: 3px solid black;
-
-    &:active {
-      box-shadow: none;
-      -webkit-box-shadow: none
-    }
-  }
+  @import "parts/content.less";
+  @import "parts/header.less";
+  @import "parts/footer.less";
+  @import "parts/partners.less";
 }

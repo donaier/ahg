@@ -8,7 +8,7 @@ $this->inc('elements/header_top.php');
   <div class="container">
     <?php if ($c->getCollectionID() == 1) { ?>
       <div class="row header-content">
-        <div class="col-xs-4">
+        <div class="col-xs-4 col-md-2">
           <a href="/">
             <div class="logo"></div>
           </a>

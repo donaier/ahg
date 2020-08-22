@@ -4,19 +4,15 @@
   <section>
     <div class="container">
       <div class="row">
-        <div class="col-sm-9">
-          <?php
-          // $a = new GlobalArea('Footer Contact');
-          // $a->display();
-          ?>
-        </div>
-        <div class="col-sm-3">
-          <?php
-          // $a = new GlobalArea('Footer Social');
-          // $a->display();
-          ?>
-          <?php echo Core::make('helper/navigation')->getLogInOutLink() ?>
-        </div>
+          <div class="col-xs-4 col-md-2">
+            <a href="/kontakt">Kontakt</a>
+          </div>
+          <div class="col-xs-4 col-md-2">
+            <a href="/impressum">Impressum</a>
+          </div>
+          <div class="col-xs-4 col-md-2 login-link">
+            <?php echo Core::make('helper/navigation')->getLogInOutLink() ?>
+          </div>
       </div>
     </div>
   </section>
