@@ -36,7 +36,6 @@
       $page = \Page::getByID($page_id, 'ACTIVE');
 
       $link_target  = Loader::helper('navigation')->getLinkToCollection($page);
-      $link_text    = $page->getCollectionName();
       $logo_url = '';
       $cat_str = '';
 
@@ -49,14 +48,14 @@
           if ($b->$cat) {
             $cat_str .= " $cat";
           }
-        }
-      } ?>
+        } ?>
 
-      <div class="col-xs-4 col-md-2 partner <?= $cat_str ?>">
-        <a href="<?= $link_target ?>">
-          <img src="<?= $logo_url ?>" alt="">
-        </a>
-      </div>
+        <div class="col-xs-4 col-md-2 partner <?= $cat_str ?>">
+          <a href="<?= $link_target ?>">
+            <img src="<?= $logo_url ?>" alt="">
+          </a>
+        </div>
+      <?php } ?>
     <?php } ?>
   </div>
 
