@@ -52,7 +52,7 @@
 
         <div class="col-xs-4 col-md-2 partner <?= $cat_str ?>">
           <a href="<?= $link_target ?>">
-            <img src="<?= $logo_url ?>" alt="">
+            <div class="partner-logo" style="background-image: url(<?= $logo_url ?>)"></div>
           </a>
         </div>
       <?php } ?>

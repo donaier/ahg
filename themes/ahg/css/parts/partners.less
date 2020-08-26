@@ -8,6 +8,19 @@
 
 .partner-logos {
   padding-bottom: 48px;
+
+  .partner-logo {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 45px;
+
+    &:before {
+      content: '';
+      display: block;
+      padding-bottom: 100%;
+    }
+  }
 }
 
 @media only screen and (min-width: 769px) {
