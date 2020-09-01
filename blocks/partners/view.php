@@ -10,21 +10,21 @@
   <div class="row filter-q">
     <?php if (isset($einsatzQ)) { ?>
       <div class="col-xs-12">
-        <button class="filter-button btn" filter-data="einsatz" onclick="applyQ('einsatz');">
+        <button class="filter-button btn" filter-data="einsatz" onclick="applyQ(this, 'einsatz');">
           <?= $einsatzQ ?>
         </button>
       </div>
     <?php } ?>
     <?php if (isset($einkaufQ)) { ?>
       <div class="col-xs-12">
-        <button class="filter-button btn" filter-data="einkauf" onclick="applyQ('einkauf');">
+        <button class="filter-button btn" filter-data="einkauf" onclick="applyQ(this, 'einkauf');">
           <?= $einkaufQ ?>
         </button>
       </div>
     <?php } ?>
     <?php if (isset($gemeinschaftQ)) { ?>
       <div class="col-xs-12">
-        <button class="filter-button btn" filter-data="gemeinschaft" onclick="applyQ('gemeinschaft');">
+        <button class="filter-button btn" filter-data="gemeinschaft" onclick="applyQ(this, 'gemeinschaft');">
           <?= $gemeinschaftQ ?>
         </button>
       </div>
@@ -60,8 +60,9 @@
   </div>
 
   <script>
-    function applyQ(q) {
-      console.log(q)
+    function applyQ(btn, q) {
+      $(btn).parents('.filter-q').find('.filter-button').each(function(){$(this).removeClass('active');})
+      $(btn).addClass('active')
       $.each($('.partner'), function( index, value ) {
         if (!$(value).attr('class').includes(q)) {
           $(value).hide()

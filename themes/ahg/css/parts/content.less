@@ -1,16 +1,17 @@
 * {
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-family: 'neue-haas-unica', Arial, Helvetica, sans-serif;
 }
 
 h1 {
-  font-size: 20px;
-  font-weight: 800;
+  font-size: 25px;
+  line-height: 38px;
+  font-weight: 700;
   padding-bottom: 4px;
 }
 
 p {
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 500;
   line-height: 24px;
   padding-bottom: 16px;
 }
@@ -22,7 +23,7 @@ img {
 a {
   text-decoration: underline;
   color: black;
-  font-weight: 400;
+  font-weight: 500;
   transition: color .3s ease;
 
   &:hover {
@@ -36,20 +37,20 @@ a {
   padding: 0;
   padding-bottom: 5px;
   margin: 10px 0;
-  font-weight: 800;
+  font-weight: 700;
   font-size: 18px;
   border: 0;
   border-bottom: 3px solid black;
   border-radius: 0;
   transition: color .3s ease, border-color .3s ease;
 
-  &:active {
+  &:active, &.active {
     box-shadow: none;
     -webkit-box-shadow: none
   }
 
-  &:hover {
-    color: @grey;
+  &:hover, &:active, &.active {
+    color: @accent;
     border-color: @accent;
   }
 }
