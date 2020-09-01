@@ -16,11 +16,11 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12">
+    <div class="col-xs-12 col-md-4">
       <h1><?= $title ?></h1>
-    </div>
-    <div class="col-xs-8">
-      <?= $info ?>
+      <div class="info-container">
+        <?= $info ?>
+      </div>
     </div>
   </div>
 </div>

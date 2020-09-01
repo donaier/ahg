@@ -1,5 +1,9 @@
 .partner-info {
   padding: 60px 0;
+
+  .info-container {
+    max-width: 75%;
+  }
 }
 
 .filter-q {
@@ -38,6 +42,12 @@
 }
 
 @media only screen and (min-width: 769px) {
+  .partner-info {
+    .info-container {
+      max-width: none;
+    }
+  }
+
   .filter-q {
     padding-bottom: 64px;
   }
