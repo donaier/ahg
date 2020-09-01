@@ -7,18 +7,32 @@
 }
 
 .partner-logos {
-  padding-bottom: 48px;
-
   .partner-logo {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    margin-bottom: 45px;
+    margin-bottom: 20px;
 
     &:before {
       content: '';
       display: block;
       padding-bottom: 100%;
+    }
+  }
+}
+
+.partner {
+  margin-bottom: 40px;
+
+  .mini-info {
+    height: 80px;
+    display: none;
+  }
+  
+  &.filtered {
+    margin-bottom: 0px;
+    .mini-info {
+      display: block;
     }
   }
 }
@@ -30,5 +44,11 @@
 
   .partner-logos {
     padding-bottom: 48px;
+  }
+
+  .partner {
+    .mini-info {
+      height: 60px;
+    }
   }
 }

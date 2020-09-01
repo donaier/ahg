@@ -8,6 +8,11 @@
 <div class="partners">
 
   <div class="row filter-q">
+    <div class="col-xs-12">
+      <button class="filter-button btn active" filter-data="alle" onclick="applyQ(this, 'alle');">
+        Startsiite
+      </button>
+    </div>
     <?php if (isset($einsatzQ)) { ?>
       <div class="col-xs-12">
         <button class="filter-button btn" filter-data="einsatz" onclick="applyQ(this, 'einsatz');">
@@ -54,6 +59,9 @@
           <a href="<?= $link_target ?>">
             <div class="partner-logo" style="background-image: url(<?= $logo_url ?>)"></div>
           </a>
+          <div class="mini-info">
+            <strong><?= $b->title ?></strong>
+          </div>
         </div>
       <?php } ?>
     <?php } ?>
@@ -63,13 +71,22 @@
     function applyQ(btn, q) {
       $(btn).parents('.filter-q').find('.filter-button').each(function(){$(this).removeClass('active');})
       $(btn).addClass('active')
-      $.each($('.partner'), function( index, value ) {
-        if (!$(value).attr('class').includes(q)) {
-          $(value).hide()
-        } else {
+      if (q == 'alle') {
+        $.each($('.partner'), function( index, value ) {
           $(value).show()
-        }
-      });
+          $(value).removeClass('filtered')
+        });
+      } else {
+        $.each($('.partner'), function( index, value ) {
+          if (!$(value).attr('class').includes(q)) {
+            $(value).hide()
+            $(value).removeClass('filtered')
+          } else {
+            $(value).show()
+            $(value).addClass('filtered')
+          }
+        });
+      }
     }
   </script>
 </div>
