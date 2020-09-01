@@ -6,7 +6,6 @@
 ?>
 
 <div class="partners">
-
   <div class="row filter-q">
     <div class="col-xs-12">
       <button class="filter-button btn active" filter-data="alle" onclick="applyQ(this, 'alle');">
