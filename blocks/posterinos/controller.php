@@ -23,6 +23,40 @@ class Controller extends BlockController
     return t('Zeigt alle Berichte unterhalb der gewählten Seite an.');
   }
 
+  public function view() {
+    $page = \Page::getByID($this->top_site, 'ACTIVE');
+    $post_page_ids = $page->getCollectionChildrenArray();
+    $key = 0;
+
+    foreach ($post_page_ids as $post_page_id) {
+      $post_page = \Page::getByID($post_page_id, 'ACTIVE');
+
+      if (($info_block_id = array_search('post_info', array_column($post_page->getBlocks(), 'btHandle'))) !== false) {
+        $b = $post_page->getBlocks()[$info_block_id]->getInstance();
+
+        if ($b->date < date("Y-m-d H:i:s")) {
+          $post['title'] = $b->title;
+          $post['subtitle'] = $b->subtitle;
+          $post['date'] = $b->date;
+          // $post['post_author'] = $b->author;
+
+          $post['page'] = $post_page;
+          $posts[] = $post;
+          $post_order[] = [$b->date, $key];
+
+          $key++;
+          if (sizeof($posts) >= 10) { break; }
+        }
+      }
+    }
+    arsort($post_order);
+
+    $this->set('post_order', $post_order);
+    $this->set('posterinos', $posts);
+    $this->set('page', $page);
+    $this->set('link_text', $link_text);
+  }
+
   public function add() {
     $list = new PageList();
     $this->set('pages', $list->getResults());
