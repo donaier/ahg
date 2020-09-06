@@ -12,10 +12,10 @@
       <a href="<?= $event_link ?>">
         <div class="eventerino">
           <div class="row">
-            <div class="col-xs-4">
+            <div class="col-xs-4 col-md-3">
               <strong class="cl-accent"><?= date('D. d.m.', strtotime($event['date'])) ?></strong>
             </div>
-            <div class="col-xs-8">
+            <div class="col-xs-8 col-md-9">
               <strong><?= $event['title'] ?></strong>
               <p><?= $event['subtitle'] ?></p>
             </div>
