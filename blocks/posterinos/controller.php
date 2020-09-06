@@ -35,9 +35,9 @@ class Controller extends BlockController
         $b = $post_page->getBlocks()[$info_block_id]->getInstance();
 
         if ($b->date < date("Y-m-d H:i:s")) {
+          $post['date'] = $b->date;
           $post['title'] = $b->title;
           $post['subtitle'] = $b->subtitle;
-          $post['date'] = $b->date;
           // $post['post_author'] = $b->author;
 
           $post['page'] = $post_page;
@@ -49,9 +49,8 @@ class Controller extends BlockController
         }
       }
     }
-    arsort($post_order);
+    arsort($posts);
 
-    $this->set('post_order', $post_order);
     $this->set('posterinos', $posts);
     $this->set('page', $page);
     $this->set('link_text', $link_text);
