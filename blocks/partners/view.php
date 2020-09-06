@@ -8,7 +8,7 @@
 <div class="partners">
   <div class="row filter-q">
     <div class="col-xs-12">
-      <button class="filter-button btn active" filter-data="alle" onclick="applyQ(this, 'alle');">
+      <button class="filter-button btn active clearer" filter-data="alle" onclick="applyQ(this, 'alle');">
         Startsiite
       </button>
     </div>

@@ -8,6 +8,22 @@
 
 .filter-q {
   padding-bottom: 36px;
+
+  .filter-button {
+    &:after {
+      content: '?';
+      position: relative;
+      left: -5px;
+    }
+
+    &.active:after {
+      content: '!';
+    }
+
+    &.clearer:after {
+      content: '';
+    }
+  }
 }
 
 .partner-logos {
