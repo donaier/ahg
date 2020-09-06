@@ -42,7 +42,7 @@ class Controller extends BlockController
           $event['page'] = $event_page;
           $events[] = $event;
 
-          if (sizeof($events) >= 10) { break; }
+          if (sizeof($events) >= 4) { break; }
         }
       }
     }

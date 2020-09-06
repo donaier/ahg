@@ -42,7 +42,7 @@ class Controller extends BlockController
           $post['page'] = $post_page;
 
           $posts[] = $post;
-          if (sizeof($posts) >= 10) { break; }
+          if (sizeof($posts) >= 4) { break; }
         }
       }
     }
