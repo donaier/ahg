@@ -6,7 +6,7 @@
       <h1 class='blue'><?= $title ?></h1>
     </div>
     <div class="col-xs-4 col-md-8">
-      <a href="/">
+      <a href="javascript:history.back()">
       <icon class="close"></icon>
     </a>
   </div>
