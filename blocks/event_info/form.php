@@ -14,11 +14,11 @@
   <div class="row">
     <div class="form-col col-xs-6">
       <label class="control-label" for="date_start">Von</label>
-      <?= Core::make('helper/form/date_time')->date('date_start', $date_start); ?>
+      <?= Core::make('helper/form/date_time')->datetime('date_start', $date_start); ?>
     </div>
     <div class="form-col col-xs-6">
       <label class="control-label" for="date_end">Bis</label>
-      <?= Core::make('helper/form/date_time')->date('date_end', $date_end); ?>
+      <?= Core::make('helper/form/date_time')->datetime('date_end', $date_end); ?>
     </div>
   </div>
 </div>

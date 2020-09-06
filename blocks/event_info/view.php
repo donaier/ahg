@@ -13,7 +13,7 @@
 </div>
 <div class="row">
   <div class="col-xs-12 col-md-4">
-    <a href="">
+    <a href="https://calendar.google.com/calendar/r/eventedit?text=<?= urlencode($title) ?>&dates=<?= date('Ymd', strtotime($date_start)).'T'.date('His', strtotime($date_start)) ?>/<?= date('Ymd', strtotime($date_end)).'T'.date('His', strtotime($date_end)) ?>&details=<?= urlencode($subtitle) ?>" target="_blank">
       <p>
         <strong><?= date('l d. F Y', strtotime($date_start)) ?></strong>
         <br>

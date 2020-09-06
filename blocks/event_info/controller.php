@@ -23,4 +23,11 @@ class Controller extends BlockController
   public function getBlockTypeDescription() {
     return t('Enthält die Infos der Events für die Darstellung im Block "Events"');
   }
+
+  public function save($args)
+  {
+    $args['date_start'] = Core::make('helper/form/date_time')->translate('date_start');
+    $args['date_end'] = Core::make('helper/form/date_time')->translate('date_end');
+    parent::save($args);
+  }
 }
