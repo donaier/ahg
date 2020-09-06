@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<schema version="0.3">
+	<table name="btEventInfo">
+		<field name="bID" type="I">
+			<key />
+			<unsigned />
+		</field>
+		<field name="title" type="C"></field>
+		<field name="subtitle" type="C"></field>
+		<field name="date_start" type="T"></field>
+		<field name="date_end" type="T"></field>
+		<field name="place_text" type="C"></field>
+		<field name="place_link" type="X"></field>
+	</table>
+</schema>

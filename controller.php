@@ -12,7 +12,7 @@ class Controller extends Package
 {
   protected $pkgHandle = 'ahg'; 
   protected $appVersionRequired = '5.7.5.6';
-  protected $pkgVersion = '0.0.3.2';
+  protected $pkgVersion = '0.0.3.4';
 
   public function getPackageDescription() {
     return t("allerhand im glarnerland");
@@ -48,7 +48,7 @@ class Controller extends Package
   }
 
   function install_block_types($pkg) {
-    foreach (['partners', 'partner_info', 'post_info', 'posterinos'] as $btHandle) {
+    foreach (['partners', 'partner_info', 'post_info', 'posterinos', 'event_info', 'eventerinos'] as $btHandle) {
       $bt = BlockType::getByHandle($btHandle);
       if (!is_object($bt)) {
         $bt = BlockType::installBlockTypeFromPackage($btHandle, $pkg);

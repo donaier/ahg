@@ -9,12 +9,16 @@
     <?php foreach ($posterinos as $post) {
       $post_link  = Loader::helper('navigation')->getLinkToCollection($post['page']); ?>
 
-      <div class="posterino">
-        <a href="<?= $post_link ?>">
-          <?= $post['title'] ?>
-        </a>
-        <p><?= $post['subtitle'] ?></p>
-      </div>
+      <a href="<?= $post_link ?>">
+        <div class="posterino">
+          <div class="row">
+            <div class="col-xs-12">
+              <strong class="cl-accent"><?= $post['title'] ?></strong>
+              <p><?= $post['subtitle'] ?></p>
+            </div>
+          </div>
+        </div>
+      </a>
     <?php } ?>
   </div>
   <a href="<?= $link_target ?>">

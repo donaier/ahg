@@ -26,7 +26,7 @@ class Controller extends BlockController
   public function view() {
     $page = \Page::getByID($this->top_site, 'ACTIVE');
     $post_page_ids = $page->getCollectionChildrenArray();
-    $key = 0;
+    $posts = [];
 
     foreach ($post_page_ids as $post_page_id) {
       $post_page = \Page::getByID($post_page_id, 'ACTIVE');
@@ -39,12 +39,9 @@ class Controller extends BlockController
           $post['title'] = $b->title;
           $post['subtitle'] = $b->subtitle;
           // $post['post_author'] = $b->author;
-
           $post['page'] = $post_page;
-          $posts[] = $post;
-          $post_order[] = [$b->date, $key];
 
-          $key++;
+          $posts[] = $post;
           if (sizeof($posts) >= 10) { break; }
         }
       }
@@ -53,7 +50,7 @@ class Controller extends BlockController
 
     $this->set('posterinos', $posts);
     $this->set('page', $page);
-    $this->set('link_text', $link_text);
+    $this->set('link_text', $this->link_text);
   }
 
   public function add() {
