@@ -60,10 +60,19 @@
           </a>
           <div class="mini-info">
             <strong><?= $b->title ?></strong>
+
+            <strong><?= preg_replace("/<p[^>]*>(?:\s|&nbsp;)*<\/p>/", '', preg_replace('#<a.*?>.*?</a>#i', '', $b->info)) ?></strong>
           </div>
         </div>
       <?php } ?>
     <?php } ?>
+    
+  </div>
+  <div class="ahg-infos row">
+    <div class="col-sm-12">
+      <h1>Das ist Allerhand im Glarnerland</h1>
+      <p>Informations- & Kommunikationsplattform für Gemeinschaft und Nachhaltigkeit im Glarnerland</p>
+    </div>
   </div>
 
   <script>
@@ -71,11 +80,13 @@
       $(btn).parents('.filter-q').find('.filter-button').each(function(){$(this).removeClass('active');})
       $(btn).addClass('active')
       if (q == 'alle') {
+        $('.partners').removeClass('filtered');
         $.each($('.partner'), function( index, value ) {
           $(value).show()
           $(value).removeClass('filtered')
         });
       } else {
+        $('.partners').addClass('filtered');
         $.each($('.partner'), function( index, value ) {
           if (!$(value).attr('class').includes(q)) {
             $(value).hide()

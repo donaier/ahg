@@ -12,7 +12,7 @@
       <h1 class='blue'><?= $title ?></h1>
     </div>
     <div class="col-xs-4 col-md-8">
-      <a href="javascript:history.back()">
+      <a href="/">
       <icon class="close"></icon>
     </a>
   </div>

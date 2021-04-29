@@ -10,7 +10,7 @@
       <?php } ?>
     </div>
     <div class="col-xs-8 col-md-10">
-      <a href="javascript:history.back()">
+      <a href="/">
         <icon class="close"></icon>
       </a>
     </div>

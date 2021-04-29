@@ -13,7 +13,7 @@ class Controller extends Package
 {
   protected $pkgHandle = 'ahg'; 
   protected $appVersionRequired = '5.7.5.6';
-  protected $pkgVersion = '0.0.3.11';
+  protected $pkgVersion = '0.0.4';
 
   public function getPackageDescription() {
     return t("allerhand im glarnerland");
@@ -47,6 +47,10 @@ class Controller extends Package
     $pt = PageTemplate::getByHandle('title_bar');
     if(!is_object($pt)) {
       $pt = PageTemplate::add('title_bar', 'Seitentitel/Schliessen X', FILENAME_PAGE_TEMPLATE_DEFAULT_ICON, $pkg);
+    }
+    $pt = PageTemplate::getByHandle('no_footer');
+    if(!is_object($pt)) {
+      $pt = PageTemplate::add('no_footer', 'ohne Footer (Partner)', FILENAME_PAGE_TEMPLATE_DEFAULT_ICON, $pkg);
     }
   }
 
