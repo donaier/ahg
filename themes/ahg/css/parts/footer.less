@@ -7,6 +7,33 @@ footer {
     color: black;
   }
 
+  a.footer-social {
+    margin-top: 48px;
+    display: block;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    &:before {
+      content: '';
+      display: block;
+      padding-top: 100%;
+    }
+
+    
+    &.insta {
+      background-image: url('../../images/footer_insta.svg');
+    }
+    &.facebook {
+      background-image: url('../../images/footer_fb.svg');
+    }
+    &.youtube {
+      background-image: url('../../images/footer_youtube.svg');
+    }
+    &.spotify {
+      background-image: url('../../images/footer_spotify.svg');
+    }
+  }
+
   @media only screen and (min-width: 769px) {
     padding-bottom: 32px;
   }

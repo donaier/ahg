@@ -54,7 +54,7 @@
           }
         } ?>
 
-        <div class="col-xs-4 col-md-2 partner <?= $cat_str ?>">
+        <div class="col-xs-6 col-md-2 partner <?= $cat_str ?>">
           <a href="<?= $link_target ?>">
             <div class="partner-logo" style="background-image: url(<?= $logo_url ?>)"></div>
           </a>
