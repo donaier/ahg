@@ -1,5 +1,5 @@
 .partner-info {
-  padding: 60px 0;
+  padding: 60px 0 120px;
 
   .info-container {
     max-width: 75%;
@@ -69,6 +69,26 @@
     .mini-info {
       display: block;
     }
+  }
+}
+
+.partner-social a.partner-social {
+  margin-top: 30px;
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  &:before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+  }
+
+  &.insta {
+    background-image: url('../../images/footer_insta.svg');
+  }
+  &.facebook {
+    background-image: url('../../images/footer_fb.svg');
   }
 }
 

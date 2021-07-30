@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<schema version="0.3">
+	<table name="btPartnerSocial">
+		<field name="bID" type="I">
+			<key />
+			<unsigned />
+		</field>
+		<field name="facebook" type="C"></field>
+		<field name="instagram" type="C"></field>
+	</table>
+</schema>
