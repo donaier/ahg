@@ -27,3 +27,11 @@
   <br>
   <input type="text" class="form-control" name="gemeinschaftQ" value="<?php echo $gemeinschaftQ?>">
 </div>
+
+<div class="form-group">
+  <div class="control-label">Info</div>
+  <?php
+    $editor = Core::make('editor');
+    echo $editor->outputBlockEditModeEditor('info', $controller->getInfo());
+  ?>
+</div>

@@ -70,10 +70,7 @@
   </div>
   <div class="ahg-infos row">
     <div class="col-sm-12">
-      <h1>Das ist Allerhand im Glarnerland</h1>
-      <p>Eine Plattform für Nachhaltigkeit und Gemeinschaft im Kanton!</p>
-      <p>Gemeinsam möchten wir Wege und Lösungsansätze finden und ausprobieren, welche allen Glarner*innen eine zukunftsfähige Lebensweise ermöglichen. Für dieses sehr ambitionierte Ziel setzen sich sehr viele Vereine, Projekte sowie Einzelpersonen im Kanton ein.</p>
-      <p>Allerhand im Glarnerland vernetzt diese "Partner" und hilft gleichzeitig dabei, ihre Angebote bekannter und einfacher zugänglich zu machen.</p>
+      <?= $info ?>
     </div>
   </div>
 

@@ -13,5 +13,6 @@
 		</field>
 		<field name="gemeinschaftQ" type="C">
 		</field>
+		<field name="info" type="X"></field>
 	</table>
 </schema>

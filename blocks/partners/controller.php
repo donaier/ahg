@@ -4,6 +4,7 @@ namespace Concrete\Package\Ahg\Block\Partners;
 
 use Concrete\Core\Block\BlockController;
 use Concrete\Core\Page\PageList;
+use Concrete\Core\Editor\LinkAbstractor;
 use Core;
 
 defined('C5_EXECUTE') or die(_("Access Denied."));
@@ -31,9 +32,22 @@ class Controller extends BlockController
   public function edit() {
     $list = new PageList();
     $this->set('pages', $list->getResults());
+    $this->set('info', LinkAbstractor::translateFrom($this->info));
   }
 
   public function save($data) {
+    $args['info'] = LinkAbstractor::translateTo($args['info']);
+
     parent::save($data);
+  }
+
+  public function view()
+  {
+      $this->set('info', LinkAbstractor::translateFrom($this->info));
+  }
+
+  public function getInfo()
+  {
+      return LinkAbstractor::translateFromEditMode($this->info);
   }
 }
