@@ -41,12 +41,14 @@ class Controller extends BlockController
 
           $event['page'] = $event_page;
           $events[] = $event;
-
-          if (sizeof($events) >= 4) { break; }
         }
       }
     }
     asort($events);
+
+    if (isset($this->max_events)) {
+      $events = array_slice($events, 0, $this->max_events);
+    }
 
     $this->set('eventerinos', $events);
     $this->set('page', $page);
@@ -64,6 +66,8 @@ class Controller extends BlockController
   }
 
   public function save($data) {
+    $data['max_events'] = trim($data['max_events']) === '' ? null : $data['max_events'];
+
     parent::save($data);
   }
 }

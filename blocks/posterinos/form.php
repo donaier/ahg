@@ -9,6 +9,15 @@
     <?php } ?>
   </select>
 </div>
+<div class="form-group">
+  <label class="control-label" for="top_site_events">Unter welcher Seite sind die Events? (vergangene werden zu Berichten quasi)</label>
+  <br>
+  <select class="form-control" name="top_site_events">
+    <?php foreach ($pages as $page) { ?>
+      <option value="<?=$page->cID?>" <?= $page->cID == $top_site_events ? 'selected' : ''?>><?=$page->getCollectionName()?></option>
+    <?php } ?>
+  </select>
+</div>
 
 <div class="form-group">
   <label class="control-label" for="title">Titel</label>
@@ -18,4 +27,9 @@
 <div class="form-group">
   <label class="control-label" for="link_text">Link Text</label>
   <input type="text" class="form-control" name="link_text" value="<?= $link_text ?>">
+</div>
+
+<div class="form-group">
+  <label class="control-label" for="max_posts">Max. angezeigte Einträge (leer heisst alle anzeigen)</label>
+  <input type="number" class="form-control" name="max_posts" value="<?= $max_posts ?>">
 </div>

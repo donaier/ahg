@@ -11,5 +11,7 @@
 		</field>
 		<field name="link_text" type="C">
 		</field>
+		<field name="max_events" type="I">
+		</field>
 	</table>
 </schema>

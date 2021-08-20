@@ -42,11 +42,35 @@ class Controller extends BlockController
           $post['page'] = $post_page;
 
           $posts[] = $post;
-          if (sizeof($posts) >= 4) { break; }
+        }
+      }
+    }
+    if (isset($this->top_site_events)){
+      $page_events = \Page::getByID($this->top_site_events, 'ACTIVE');
+      $event_page_ids = $page_events->getCollectionChildrenArray();
+      foreach ($event_page_ids as $event_page_id) {
+        $event_page = \Page::getByID($event_page_id, 'ACTIVE');
+
+        if (($info_block_id = array_search('event_info', array_column($event_page->getBlocks(), 'btHandle'))) !== false) {
+          $b = $event_page->getBlocks()[$info_block_id]->getInstance();
+
+          if ($b->date_start < date("Y-m-d H:i:s")) {
+            $post['date'] = $b->date_start;
+            $post['title'] = $b->title;
+            $post['subtitle'] = $b->subtitle;
+            // $post['post_author'] = $b->author;
+            $post['page'] = $event_page;
+
+            $posts[] = $post;
+          }
         }
       }
     }
     arsort($posts);
+
+    if (isset($this->max_posts)) {
+      $posts = array_slice($posts, 0, $this->max_posts);
+    }
 
     $this->set('posterinos', $posts);
     $this->set('page', $page);
@@ -64,6 +88,8 @@ class Controller extends BlockController
   }
 
   public function save($data) {
+    $data['max_posts'] = trim($data['max_posts']) === '' ? null : $data['max_posts'];
+
     parent::save($data);
   }
 }

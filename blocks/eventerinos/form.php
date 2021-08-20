@@ -18,3 +18,8 @@
   <label class="control-label" for="link_text">Link Text</label>
   <input type="text" class="form-control" name="link_text" value="<?= $link_text ?>">
 </div>
+
+<div class="form-group">
+  <label class="control-label" for="max_events">Max. angezeigte Einträge (leer heisst alle anzeigen)</label>
+  <input type="number" class="form-control" name="max_events" value="<?= $max_events ?>">
+</div>

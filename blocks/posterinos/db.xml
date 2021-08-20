@@ -7,9 +7,13 @@
 		</field>
 		<field name="top_site" type="I">
 		</field>
+		<field name="top_site_events" type="I">
+		</field>
 		<field name="title" type="C">
 		</field>
 		<field name="link_text" type="C">
+		</field>
+		<field name="max_posts" type="I">
 		</field>
 	</table>
 </schema>
