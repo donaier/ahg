@@ -31,6 +31,15 @@
       </div>
     </div>
   </section>
+  <section>
+    <div class="container">
+      <?php
+        $a = new GlobalArea('Page Footer');
+        $a->enableGridContainer();
+        $a->display($c);
+      ?>
+    </div>
+  </section>
 </footer>
 
 
