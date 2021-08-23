@@ -20,15 +20,27 @@
 <div class="row">
   <div class="col-xs-12 col-md-4">
     <a href=<?= $cal_link ?> target="_blank">
-      <p>
-        <strong><?= date('l d. F Y', strtotime($date_start)) ?></strong>
-        <br>
-        <strong><?= date('H:i', strtotime($date_start)) ?> Uhr - <?= date('H:i', strtotime($date_end)) ?> Uhr</strong>
-      </p>
+      <?php if (date('l d. F Y', strtotime($date_start)) == date('l d. F Y', strtotime($date_end))) { ?>
+        <p>
+          <strong><?= date('l d. F Y', strtotime($date_start)) ?></strong>
+          <br>
+          <strong><?= date('H:i', strtotime($date_start)) ?> Uhr - <?= date('H:i', strtotime($date_end)) ?> Uhr</strong>
+        </p>
+      <?php } else { ?>
+        <p>
+          <strong>von: <?= date('l d. F Y, H:i', strtotime($date_start)) ?></strong>
+          <br>
+          <strong>bis: <?= date('l d. F Y, H:i', strtotime($date_end)) ?></strong>
+        </p>
+      <?php } ?>
     </a>
-    <a href="<?= $place_link ?>" target="_blank">
+    <?php if (!empty(trim($place_link))) { ?>
+      <a href="<?= $place_link ?>" target="_blank">
+        <strong><?= $place_text ?></strong>
+      </a>
+    <?php } else { ?>
       <strong><?= $place_text ?></strong>
-    </a>
+    <?php } ?>
   </div>
   </div>
 </div>

@@ -54,8 +54,8 @@ class Controller extends BlockController
         if (($info_block_id = array_search('event_info', array_column($event_page->getBlocks(), 'btHandle'))) !== false) {
           $b = $event_page->getBlocks()[$info_block_id]->getInstance();
 
-          if ($b->date_start < date("Y-m-d H:i:s")) {
-            $post['date'] = $b->date_start;
+          if ($b->date_end < date("Y-m-d H:i:s")) {
+            $post['date'] = $b->date_end;
             $post['title'] = $b->title;
             $post['subtitle'] = $b->subtitle;
             // $post['post_author'] = $b->author;
