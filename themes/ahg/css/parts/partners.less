@@ -8,6 +8,8 @@
 
 .filter-q {
   padding-bottom: 36px;
+  color: @accent;
+  border-color: @accent;
 
   .filter-button {
     &:after {
@@ -15,9 +17,15 @@
       position: relative;
       left: -5px;
     }
-    &:hover {
+    &.active {
       color: #AD18B9;
-      border-color: #AD18B9;
+      border-color: #AD18B9 !important;
+    }
+    &:hover {
+      filter: opacity(.75);
+    }
+    &.active:hover {
+      filter: none;
     }
 
     &.active:after {
