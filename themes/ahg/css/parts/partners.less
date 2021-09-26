@@ -17,12 +17,15 @@
       position: relative;
       left: -5px;
     }
-    &.active {
-      color: #AD18B9;
-      border-color: #AD18B9 !important;
+    &.active, &.active:hover {
+      color: black;
+      border-color: black !important;
     }
     &:hover {
-      filter: opacity(.75);
+      // filter: opacity(.75);
+      color: #AD18B9;
+      border-color: #AD18B9 !important;
+
     }
     &.active:hover {
       filter: none;
