@@ -54,7 +54,7 @@
           }
         } ?>
 
-        <div class="col-xs-6 col-md-2 partner <?= $cat_str ?>">
+        <div class="col-xs-4 col-md-2 partner <?= $cat_str ?>">
           <a href="<?= $link_target ?>">
             <div class="partner-logo" style="background-image: url(<?= $logo_url ?>)"></div>
           </a>
@@ -83,6 +83,8 @@
         $.each($('.partner'), function( index, value ) {
           $(value).show()
           $(value).removeClass('filtered')
+          $(value).removeClass('col-xs-6')
+          $(value).addClass('col-xs-4')
         });
       } else {
         $('.partners').addClass('filtered');
@@ -90,9 +92,13 @@
           if (!$(value).attr('class').includes(q)) {
             $(value).hide()
             $(value).removeClass('filtered')
+            $(value).removeClass('col-xs-6')
+            $(value).addClass('col-xs-4')
           } else {
             $(value).show()
             $(value).addClass('filtered')
+            $(value).removeClass('col-xs-4')
+            $(value).addClass('col-xs-6')
           }
         });
       }
