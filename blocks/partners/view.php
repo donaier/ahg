@@ -69,7 +69,7 @@
     
   </div>
   <div class="ahg-infos row">
-    <div class="col-sm-12">
+    <div class="col-md-6 col-12">
       <?= $info ?>
     </div>
   </div>
