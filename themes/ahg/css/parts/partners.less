@@ -122,8 +122,22 @@
     }
   }
 
-  .partners .filter-q {
-    padding-bottom: 0;
+  .partners {
+    .col-md-2 {
+      width: 12.5% !important;
+      .partner-logo {
+        background-size: 100%;
+      }
+    }
+    
+    &.filtered {
+      .col-md-2 {
+        width: 16.666% !important;
+      }
+      .partner-logo {
+        background-size: 70%;
+      }
+    }
   }
 
   .partner-logos {
