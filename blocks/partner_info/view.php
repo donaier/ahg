@@ -23,4 +23,39 @@
       </div>
     </div>
   </div>
+  <div class="row content">
+    <div class="col-12 col-sm-6">
+      <?php if (isset($image_l)) { ?>
+        <img src="<?= File::getByID($image_l)->getURL() ?>" alt="">
+      <?php } ?>
+      <strong><?= $title_l ?></strong>
+      <?= $text_l ?>
+    </div>
+    <div class="col-12 col-sm-6">
+      <?php if (isset($image_r)) { ?>
+        <img src="<?= File::getByID($image_r)->getURL() ?>" alt="">
+      <?php } ?>
+      <strong><?= $title_r ?></strong>
+      <?= $text_r ?>
+    </div>
+  </div>
+  <div class="row contact">
+    <div class="col-sm-12">
+      <?= $contact ?>
+    </div>
+  </div>
+  <div class="row social">
+    <div class="col-xs-3 col-sm-1">
+      <a href="<?= $facebook ?>" class="partner-social facebook" target="_blank"></a>
+    </div>
+    <div class="col-xs-3 col-sm-1">
+      <a href="<?= $instagram ?>" class="partner-social instagram" target="_blank"></a>
+    </div>
+    <div class="col-xs-3 col-sm-1">
+      <a href="<?= $youtube ?>" class="partner-social youtube" target="_blank"></a>
+    </div>
+    <div class="col-xs-3 col-sm-1">
+      <a href="<?= $spotify ?>" class="partner-social spotify" target="_blank"></a>
+    </div>
+  </div>
 </div>
