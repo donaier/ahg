@@ -9,5 +9,17 @@
 		<field name="subtitle" type="C"></field>
 		<field name="date" type="T"></field>
 		<field name="author" type="X"></field>
+		<field name="image_l" type="I">
+			<default value="0" />
+			<unsigned/>
+		</field>
+		<field name="image_r" type="I">
+			<default value="0" />
+			<unsigned/>
+		</field>
+		<field name="title_l" type="C"></field>
+		<field name="title_r" type="C"></field>
+		<field name="text_l" type="X"></field>
+		<field name="text_r" type="X"></field>
 	</table>
 </schema>
