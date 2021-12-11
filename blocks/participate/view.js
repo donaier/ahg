@@ -8,11 +8,15 @@ window.onload = () => {
 function validateAndManage(e, form) {
   e.preventDefault();
 
+  
   if (is_valid(form)) {
+    let formData = new FormData(document.querySelector('#participate form'));
     $.ajax({
       type: "POST",
       url: form.attr('action'),
-      data: form.serialize(),
+      data: formData,
+      processData: false,
+      contentType: false,
       success: function(data) { $('#participate').html(data) }
     });
   } else {
