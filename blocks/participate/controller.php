@@ -54,11 +54,23 @@ class Controller extends BlockController
         }
 
         $this->add_preview_block($fileLID, $fileRID);
+
+        include 'parts/thanks.php';
+
+        exit;
     }
 
     private function add_preview_block($fileLID, $fileRID) {
         $page = Page::getByPath('/preview');
         // add page below $page and add the block there
+        $pageType = \PageType::getByHandle('page');
+        $template = \PageTemplate::getByHandle('full');
+
+        $newPage = $page->add($pageType, array(
+            'cName' => $_POST['title'],
+            'cHandle ' => urlencode($_POST['title'])
+        ), $template);
+
         $block = BlockType::getByHandle('post_info');
         $data = array(
             'title'         => $_POST['title'],
@@ -72,6 +84,6 @@ class Controller extends BlockController
             'image_l'        => $fileLID,
             'image_r'        => $fileRID,
         );
-        $page->addBlock($block, 'Main', $data);
+        $newPage->addBlock($block, 'Main', $data);
     }
 }

@@ -13,7 +13,7 @@ class Controller extends Package
 {
   protected $pkgHandle = 'ahg'; 
   protected $appVersionRequired = '5.7.5.6';
-  protected $pkgVersion = '0.0.6';
+  protected $pkgVersion = '0.1.0';
 
   public function getPackageDescription() {
     return t("allerhand im glarnerland");

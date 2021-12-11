@@ -1,0 +1,29 @@
+#participate {
+  .alert-danger {
+    display: none;
+    &.show {
+      display: block;
+    }
+  }
+
+  form {
+    input, .alert {
+      border-radius: 0;
+    }
+
+    .presence-required.error {
+      input, .cke {
+        border-color: @purple;
+      }
+      label {
+        color: @purple;
+      }
+    }
+
+    .danger-purple {
+      color: @purple;
+      border-color: @purple;
+      background: lavenderblush;
+    }
+  }
+}
