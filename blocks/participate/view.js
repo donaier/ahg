@@ -10,6 +10,9 @@ function validateAndManage(e, form) {
 
   
   if (is_valid(form)) {
+    form.find('button[type="submit"]').prop('disabled', true);
+    form.find('button[type="submit"]').html('moment...');
+
     let formData = new FormData(document.querySelector('#participate form'));
     $.ajax({
       type: "POST",
