@@ -1,21 +1,31 @@
 window.onload = () => {
-  let form = $('#participate').find('form');
+  let formPost = $('#participate').find('.post form');
+  let formEvent = $('#participate').find('.event form');
   let tabbers = $('.participate-heading button');
 
-  form.submit((e) => validateAndManage(e, form));
+  formPost.submit((e) => validateAndManage(e, formPost));
+  formEvent.submit((e) => validateAndManage(e, formEvent));
   tabbers.click((e) => switchTab(e));
 }
 
 
 function validateAndManage(e, form) {
   e.preventDefault();
+  let formData = null;
 
-  
+  for(var instanceName in CKEDITOR.instances) CKEDITOR.instances[instanceName].updateElement();
+
   if (is_valid(form)) {
     form.find('button[type="submit"]').prop('disabled', true);
     form.find('button[type="submit"]').html('moment...');
-
-    let formData = new FormData(document.querySelector('#participate form'));
+    
+    if (form.attr('data-type') == 'post') {
+      console.log('?');
+      formData = new FormData(document.querySelector('#participate .post form'));
+    }
+    if (form.attr('data-type') == 'event') {
+      formData = new FormData(document.querySelector('#participate .event form'));
+    }
     $.ajax({
       type: "POST",
       url: form.attr('action'),
