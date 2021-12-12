@@ -44,3 +44,19 @@
   </div>
   </div>
 </div>
+<div class="row content">
+  <div class="col-12 col-sm-6">
+    <?php if (isset($image_l)) { ?>
+      <img src="<?= File::getByID($image_l)->getURL() ?>" alt="">
+    <?php } ?>
+    <strong><?= $title_l ?></strong>
+    <?= $text_l ?>
+  </div>
+  <div class="col-12 col-sm-6">
+    <?php if (isset($image_r)) { ?>
+      <img src="<?= File::getByID($image_r)->getURL() ?>" alt="">
+    <?php } ?>
+    <strong><?= $title_r ?></strong>
+    <?= $text_r ?>
+  </div>
+</div>

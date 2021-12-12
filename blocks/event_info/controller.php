@@ -12,8 +12,8 @@ defined('C5_EXECUTE') or die(_("Access Denied."));
 class Controller extends BlockController
 {
   protected $btTable = "btEventInfo";
-  protected $btInterfaceWidth = "700";
-  protected $btInterfaceHeight = "480";
+  protected $btInterfaceWidth = "1200";
+  protected $btInterfaceHeight = "800";
   protected $btDefaultSet = 'basic';
 
   public function getBlockTypeName() {

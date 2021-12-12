@@ -29,7 +29,7 @@
   </div>
 </div>
 <div id="ccm-tab-content-content" class="ccm-tab-content">
-<div class="form-group">
+  <div class="form-group">
     <label class="control-label">Bild links</label>
     <?php
       $service = Core::make('helper/concrete/file_manager');

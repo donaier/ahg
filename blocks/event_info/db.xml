@@ -11,5 +11,17 @@
 		<field name="date_end" type="T"></field>
 		<field name="place_text" type="C"></field>
 		<field name="place_link" type="X"></field>
+		<field name="image_l" type="I">
+			<default value="0" />
+			<unsigned/>
+		</field>
+		<field name="image_r" type="I">
+			<default value="0" />
+			<unsigned/>
+		</field>
+		<field name="title_l" type="C"></field>
+		<field name="title_r" type="C"></field>
+		<field name="text_l" type="X"></field>
+		<field name="text_r" type="X"></field>
 	</table>
 </schema>
