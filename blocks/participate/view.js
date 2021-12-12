@@ -1,7 +1,9 @@
 window.onload = () => {
   let form = $('#participate').find('form');
+  let tabbers = $('.participate-heading button');
 
   form.submit((e) => validateAndManage(e, form));
+  tabbers.click((e) => switchTab(e));
 }
 
 
@@ -40,4 +42,13 @@ function is_valid(form) {
   });
 
   return validity;
+}
+
+function switchTab(e) {
+  let btn = e.target;
+  $('.participate-heading button').removeClass('active');
+  $('#participate .tab-content').removeClass('active');
+
+  $('#participate').find($(btn).attr('data-tab')).addClass('active');
+  $(btn).addClass('active');
 }

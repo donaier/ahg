@@ -1,7 +1,39 @@
+.participate-heading {
+  margin-top: 120px;
+
+  button {
+    display: inline-block;
+    color: @accent;
+    margin-right: 3rem;
+
+    &:hover {
+      color: @purple;
+      border-color: @purple;
+    }
+    &.active {
+      color: black;
+      border-color: black;
+      pointer-events: none;
+      &:after {
+        content: '!'
+      }
+    }
+  }
+}
+
 #participate {
+  margin-top: 120px;
+
   .alert-danger {
     display: none;
     &.show {
+      display: block;
+    }
+  }
+
+  .post, .event, .partner {
+    display: none;
+    &.active {
       display: block;
     }
   }
