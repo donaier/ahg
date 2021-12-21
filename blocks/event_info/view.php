@@ -1,6 +1,6 @@
-<?php 
+<?php
   defined('C5_EXECUTE') or die(_("Access Denied."));
-  $cal_link = 
+  $cal_link =
     "https://calendar.google.com/calendar/r/eventedit?text=".urlencode($title).
     "&dates=".date('Ymd', strtotime($date_start)).'T'.date('His', strtotime($date_start)).'/'.date('Ymd', strtotime($date_end)).'T'.date('His', strtotime($date_end)).
     "&details=".urlencode($subtitle);
@@ -46,14 +46,14 @@
 </div>
 <div class="row content">
   <div class="col-12 col-sm-6">
-    <?php if (isset($image_l)) { ?>
+    <?php if (is_object(File::getByID($image_l))) { ?>
       <img src="<?= File::getByID($image_l)->getURL() ?>" alt="">
     <?php } ?>
     <strong><?= $title_l ?></strong>
     <?= $text_l ?>
   </div>
   <div class="col-12 col-sm-6">
-    <?php if (isset($image_r)) { ?>
+    <?php if (is_object(File::getByID($image_r))) { ?>
       <img src="<?= File::getByID($image_r)->getURL() ?>" alt="">
     <?php } ?>
     <strong><?= $title_r ?></strong>
